@@ -1,0 +1,98 @@
+/* Reset & 基础 */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: "Segoe UI", sans-serif; background:#0a0f1f; color:#e0e0e0; line-height:1.6; }
+.container { max-width:1000px; margin:0 auto; padding:2rem; }
+
+/* 导航 */
+header { position:fixed; top:0; width:100%; background:rgba(10,15,31,0.85); backdrop-filter:blur(10px); z-index:100; }
+.nav { display:flex; justify-content:space-between; align-items:center; }
+.nav__list { display:flex; gap:1.5rem; }
+.nav__list a { text-decoration:none; color:#e0e0e0; transition:0.3s; }
+.nav__list a:hover { color:#40c4ff; }
+.nav__toggle { display:none; cursor:pointer; font-size:1.5rem; }
+
+/* Hero */
+.hero { padding-top:8rem; text-align:center; animation:fadeIn 1s; }
+.hero__title { font-size:2.5rem; margin-bottom:1rem; }
+.hero__subtitle { font-size:1.2rem; margin-bottom:2rem; }
+.btn { display:inline-block; padding:0.8rem 1.5rem; border:1px solid #40c4ff; border-radius:4px; text-decoration:none; transition:0.3s; }
+.btn:hover { background:rgba(64,196,255,0.1); }
+
+/* Section 标题 */
+.section__title { font-size:2rem; margin-bottom:1.5rem; position:relative; }
+.section__title::after {
+  content:""; width:60px; height:3px; background:#40c4ff; position:absolute; left:0; bottom:-8px;
+}
+
+/* Grid 布局 */
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; }
+.card, .project, .tutorial {
+  background:rgba(255,255,255,0.03); padding:1.5rem; border-radius:8px; backdrop-filter:blur(6px);
+  transition:transform 0.3s, background 0.3s;
+}
+.card:hover, .project:hover, .tutorial:hover { transform:translateY(-5px); background:rgba(255,255,255,0.05); }
+
+/* 项目 */
+.projects__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; }
+.project img { width:100%; border-radius:6px; }
+
+/* 轮播 */
+.carousel { position:relative; overflow:hidden; }
+.carousel__track { display:flex; transition:transform 0.5s ease; }
+.pub { min-width:300px; padding:1rem; text-align:center; }
+.carousel__btn { position:absolute; top:50%; transform:translateY(-50%); background:none; border:none; font-size:2rem; cursor:pointer; }
+.prev { left:10px; } .next { right:10px; }
+
+/* 技能进度条 */
+.skills .skill { margin-bottom:1rem; }
+.bar { background:rgba(255,255,255,0.1); height:8px; border-radius:4px; overflow:hidden; }
+.fill { width:0; height:100%; }
+
+/* 教程网格 */
+.tutorials__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.2rem; }
+.tutorial__link { text-decoration:none; display:inline-block; margin-top:0.8rem; }
+
+/* 联系表单 */
+.contact__form { display:flex; flex-direction:column; gap:1rem; }
+.contact__form input,
+.contact__form textarea { padding:0.8rem; background:rgba(255,255,255,0.05); border:none; border-radius:4px; color:#e0e0e0; }
+.contact__form button { align-self:flex-start; }
+
+/* 回到顶部 */
+#backToTop {
+  position:fixed; bottom:2rem; right:2rem; padding:0.8rem; border:none; border-radius:50%; display:none;
+  background:rgba(64,196,255,0.8); cursor:pointer;
+}
+
+/* 动效 & Reveal */
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.reveal { opacity:0; transform:translateY(30px); transition:0.6s; }
+.reveal.active { opacity:1; transform:translateY(0); }
+
+/* 响应式导航 */
+@media (max-width:768px) {
+  .nav__list { position:fixed; top:0; right:-100%; height:100vh; flex-direction:column; background:rgba(10,15,31,0.95); padding-top:4rem; gap:2rem; transition:0.3s; }
+  .nav__list.show { right:0; }
+  .nav__toggle { display:block; }
+}
+body {
+  /* 原有背景 */
+  background: #0a0f1f;
+  /* 叠加一个可动的渐变层 */
+  background: linear-gradient(270deg, #0a0f1f, #1e2a47, #0a0f1f);
+  background-size: 600% 600%;
+  animation: gradientBackground 20s ease infinite;
+}
+
+/* 渐变关键帧动画 */
+@keyframes gradientBackground {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+.fill {
+  width: 0;                /* 起始宽度 */
+  height: 100%;
+  transition: width 1.5s ease;  /* 平滑过渡 */
+}

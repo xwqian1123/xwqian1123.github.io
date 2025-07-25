@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Dr. 张三的科研主页</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header id="header">
+    <nav class="nav container">
+      <a href="#hero" class="logo">Dr. 张三</a>
+      <ul class="nav__list">
+        <li><a href="#research">研究课题</a></li>
+        <li><a href="#projects">项目展示</a></li>
+        <li><a href="#publications">论文轮播</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#tutorials">教程</a></li>
+        <li><a href="#contact">联系我</a></li>
+      </ul>
+      <div class="nav__toggle" id="nav-toggle">☰</div>
+    </nav>
+  </header>
+
+  <!-- Hero 区 -->
+  <section id="hero" class="hero container">
+    <h1 class="hero__title">多模态模拟 · 计算机视觉 · 深度学习</h1>
+    <p class="hero__subtitle">探索信息与感知的边界</p>
+    <a href="#research" class="btn">开始了解 ↓</a>
+  </section>
+
+  <!-- 研究课题 -->
+  <section id="research" class="section container reveal">
+    <h2 class="section__title">研究课题</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>多模态融合</h3>
+        <p>结合视觉、语言与结构化数据的表示与推理。</p>
+      </div>
+      <div class="card">
+        <h3>模拟与渲染</h3>
+        <p>基于物理规则的高保真场景模拟。</p>
+      </div>
+      <div class="card">
+        <h3>深度学习优化</h3>
+        <p>网络结构搜索与高效推理。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目展示 -->
+  <section id="projects" class="section container reveal">
+    <h2 class="section__title">项目展示</h2>
+    <div class="projects__grid">
+      <div class="project">
+        <img src="images/project1.jpg" alt="项目1">
+        <div class="project__info">
+          <h3>实时渲染引擎</h3>
+          <p>支持光线追踪与体积渲染。</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="images/project2.jpg" alt="项目2">
+        <div class="project__info">
+          <h3>多模态对话系统</h3>
+          <p>图像+文本的交互智能体。</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="images/project3.jpg" alt="项目3">
+        <div class="project__info">
+          <h3>大规模并行训练平台</h3>
+          <p>上千 GPU 集群资源调度。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 论文轮播 -->
+  <section id="publications" class="section container reveal">
+    <h2 class="section__title">最新论文</h2>
+    <div class="carousel">
+      <div class="carousel__track">
+        <article class="pub">
+          <h3>《Multimodal Simulation in Autonomous Agents》</h3>
+          <p>IEEE CVPR 2025</p>
+        </article>
+        <article class="pub">
+          <h3>《Physics-based Rendering Optimization》</h3>
+          <p>ACM SIGGRAPH 2024</p>
+        </article>
+        <article class="pub">
+          <h3>《Efficient Neural Architecture Search》</h3>
+          <p>NeurIPS 2024</p>
+        </article>
+      </div>
+      <button class="carousel__btn prev">‹</button>
+      <button class="carousel__btn next">›</button>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills" class="section container reveal">
+    <h2 class="section__title">技能图谱</h2>
+    <div class="skills">
+      <div class="skill">
+        <h4>Python</h4>
+        <div class="bar"><div class="fill" data-percent="95%"></div></div>
+      </div>
+      <div class="skill">
+        <h4>TensorFlow / PyTorch</h4>
+        <div class="bar"><div class="fill" data-percent="90%"></div></div>
+      </div>
+      <div class="skill">
+        <h4>C++ / CUDA</h4>
+        <div class="bar"><div class="fill" data-percent="85%"></div></div>
+      </div>
+      <div class="skill">
+        <h4>WebGL / Three.js</h4>
+        <div class="bar"><div class="fill" data-percent="80%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 教程 -->
+  <section id="tutorials" class="section container reveal">
+    <h2 class="section__title">精选教程</h2>
+    <div class="tutorials__grid">
+      <div class="tutorial">
+        <h4>多模态数据预处理</h4>
+        <a href="#" class="tutorial__link">查看教程 →</a>
+      </div>
+      <div class="tutorial">
+        <h4>高性能渲染加速</h4>
+        <a href="#" class="tutorial__link">查看教程 →</a>
+      </div>
+      <div class="tutorial">
+        <h4>模型压缩与量化</h4>
+        <a href="#" class="tutorial__link">查看教程 →</a>
+      </div>
+      <div class="tutorial">
+        <h4>集群分布式训练</h4>
+        <a href="#" class="tutorial__link">查看教程 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系表单 -->
+  <section id="contact" class="section container reveal">
+    <h2 class="section__title">联系我</h2>
+    <form class="contact__form">
+      <input type="text" placeholder="您的姓名" required>
+      <input type="email" placeholder="您的邮箱" required>
+      <textarea rows="5" placeholder="您的留言"></textarea>
+      <button type="submit" class="btn">发送</button>
+    </form>
+  </section>
+
+  <!-- 回到顶部 -->
+  <button id="backToTop">↑</button>
+
+  <script src="./script.js"></script>
+</body>
+</html>
